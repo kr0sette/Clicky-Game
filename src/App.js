@@ -5,8 +5,6 @@ import Jumbotron from './components/Jumbotron';
 import Card from './components/Card'
 import char from "./characters.json";
 
-// console.log(char);
-
 
 class App extends Component {
 //Set State
@@ -14,7 +12,8 @@ class App extends Component {
     char,
     score: 0,
     gamesWon: 0,
-    clicked: []
+    clicked: [],
+    status: ""
   };
   
 
@@ -29,11 +28,12 @@ class App extends Component {
       //If score = 12
       if (newScore === 12) {
         //send "You Win" message
-        alert("Congrats, you win!")
+        // alert("Congrats, you win!")
         //increase games won score
         let newGamesWon = this.state.gamesWon + 1;
         this.setState({
-          gamesWon: newGamesWon
+          gamesWon: newGamesWon,
+          status: "Congrats, you WIN!"
         });
         //reset game
         this.handleReset();
@@ -41,14 +41,14 @@ class App extends Component {
       //If score <> 12
       else{
         //send "You Guess Correctly" message
-        alert("You guessed correctly!")
+        // alert("You guessed correctly!")
         this.setState({
           //increase state.score
           score: newScore,
-          clicked: this.state.clicked.concat(id)
+          clicked: this.state.clicked.concat(id),
+          status: "You guess correctly!"
         //add selected card to Clicked array
         });
-        console.log(this.state.clicked);
         //shuffle cards
         this.handleShuffle();
       }
@@ -56,12 +56,19 @@ class App extends Component {
     //If it is clicked already
     else {
       //send "You Lose" Message
-      alert("You guessed incorrectly!  Start again.");
+      // alert("You guessed incorrectly!  Start again.");
+      this.setState({
+       status: "You guessed incorrectly!  Play again."
+      });
       //reset game
       this.handleReset();
     }
-    
   };//END handleClick
+
+
+
+
+
 
   //Function that handles reseting game
   handleReset = () => {
@@ -71,6 +78,9 @@ class App extends Component {
     });
     this.handleShuffle();
   };//END handleReset
+
+
+
 
 
   //Function that shuffles the cards
@@ -90,6 +100,8 @@ class App extends Component {
 
 
 
+
+
 //Renders components to page
   render() {
     return (
@@ -97,6 +109,7 @@ class App extends Component {
         <NavBar 
           score = {this.state.score}
           gamesWon = {this.state.gamesWon}
+          status = {this.state.status}
         />
         <Jumbotron />
         {char.map (char => (

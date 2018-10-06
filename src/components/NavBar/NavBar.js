@@ -10,7 +10,7 @@ const NavBar = props => (
                     <p className="top">Clicky Game</p>
                 </li>
                 <li className="nav-item">
-                    <p className="top">Status</p>
+                    <p className="top">{props.status}</p>
                 </li>
                 <li className="nav-item">
                     <p className="top"
