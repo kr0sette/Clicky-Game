@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Card from "../Card";
 
 class Game extends Component {
 
     render(){
-        return <p>THE GAME WILL GO HERE!!!!</p>
+        return <Card />
     }
 }
 

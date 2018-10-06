@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import Wrapper from './components/Wrapper';
 import NavBar from './components/NavBar';
 import Jumbotron from './components/Jumbotron';
-import Game from './components/Game'
+import Card from './components/Card'
+import char from "./characters.json";
 
+console.log(char);
 
 class App extends Component {
 
@@ -12,7 +14,12 @@ class App extends Component {
       <Wrapper>
         <NavBar />
         <Jumbotron />
-        <Game />
+        {char.map( char => (
+        <Card 
+          id={char.id}
+          image={char.image}
+          />
+          ))}
       </Wrapper>
     );
   }
