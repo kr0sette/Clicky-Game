@@ -1,7 +1,10 @@
-#left {
-    float: left
+ul {
+    width: 100%
 }
 
-#right {
-    float: right
+li {
+    float: left;
+    width: 33%;
+    text-align: center;
+
 }
