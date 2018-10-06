@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Card from "../Card";
+import "./Game.css"
 
 class Game extends Component {
 
     render(){
-        return <Card />
+        return <div className="game">
+        <Card />
+        </div>
     }
 }
 

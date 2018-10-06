@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Wrapper from './components/Wrapper';
 import NavBar from './components/NavBar';
 import Jumbotron from './components/Jumbotron';
-import Card from './components/Card'
+import Card from './components/Card';
 import char from "./characters.json";
 
 
@@ -112,14 +112,21 @@ class App extends Component {
           status = {this.state.status}
         />
         <Jumbotron />
-        {char.map (char => (
-          <Card 
-            key={char.id}
-            id={char.id}
-            image={char.image}
-            handleClick = {this.handleClick}
-            />
-          ))}
+        <div className="container game">
+          <div className="row">
+            <div className="column">
+              {this.state.char.map (char => (
+                <Card 
+                  key={char.id}
+                  id={char.id}
+                  name={char.name}
+                  image={char.image}
+                  handleClick = {this.handleClick}
+                  />
+              ))}
+            </div>
+          </div>
+        </div>
       </Wrapper>
     );
   }//END Render

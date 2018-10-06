@@ -8,7 +8,7 @@ const Card = props => (
         value={props.id}
         onClick = {() => props.handleClick(props.id)}
     >
-        <img src={props.image} alt="" />
+        <img alt={props.name} src={props.image}  />
     </div>
 );
 
