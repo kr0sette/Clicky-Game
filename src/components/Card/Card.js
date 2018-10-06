@@ -3,8 +3,12 @@ import "./Card.css";
 
 
 const Card = props => (
-    <div className="card" value={props.id}>
-        <img src={props.image} />
+    <div 
+        className="card" 
+        value={props.id}
+        onClick = {() => props.handleShuffle()}
+    >
+        <img src={props.image} alt="" />
     </div>
 );
 

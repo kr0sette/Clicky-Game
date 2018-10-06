@@ -1,19 +1,17 @@
 import React from "react";
+import "./NavBar.css";
 
 const NavBar = () => (
     <div className="navbar">
         <ul className="nav justify-content-center">
-            <li className="nav-item">
-                <a className="nav-link active" href="google.com">Active</a>
+            <li className="nav-item" id="left">
+                Clicky Game
             </li>
-            <li className="nav-item">
-                <a className="nav-link" href="google.com">Link</a>
+            <li className="nav-item" id="center">
+                Status
             </li>
-            <li className="nav-item">
-                <a className="nav-link" href="google.com">Link</a>
-            </li>
-            <li className="nav-item">
-                <a className="nav-link disabled" href="google.com">Disabled</a>
+            <li className="nav-item" id="right">
+                Score
             </li>
         </ul>  
     </div>
